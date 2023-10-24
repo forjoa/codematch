@@ -29,13 +29,37 @@ app.post("/doubts", (req, res) => {
 
   db.query(query, [name, email, message], (err, result) => {
     if (err) {
-      console.error("error al enviar mensaje", err);
+      console.error("error al enviar mensaje ", err);
       res.status(500).send("error al enviar mensaje");
       return;
     }
 
     res.json({ message: "mensaje enviado correctamente" });
   });
+});
+
+// insert new developers
+app.post("/register", (req, res) => {
+  const { name, surname, email, pwd, languages, description } = req.body;
+
+  const query =
+    "INSERT INTO developers (name, email, pwd, programming_lang, description) values(?,?,?,?,?)";
+
+  db.query(
+    query,
+    [name + " " + surname, email, pwd, languages, description],
+    (err, result) => {
+      if (err) {
+        console.error("error al registrar nuevo dev ", err);
+        res.status(500).send("error al registrar nuevo dev");
+        return;
+      } else {
+        console.log("dev correctamente guardado");
+      }
+
+      res.json({ message: "nuevo dev insertado correctamente" });
+    }
+  );
 });
 
 // listener

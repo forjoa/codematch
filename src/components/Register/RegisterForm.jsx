@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 
 import locked from '../../icons/locked.svg'
 import unlocked from '../../icons/unlocked.svg'
@@ -6,6 +7,12 @@ import unlocked from '../../icons/unlocked.svg'
 import languages_frameworks from '../../constants/languages.js'
 
 const RegisterForm = () => {
+    const notify = () => toast('Tarea añadida correctamente', {
+        duration: 1000,
+        position: 'top-center',
+        icon: '✅'
+    })
+
     // values from form
     const [name, setName] = useState('')
     const [surname, setSurname] = useState('')
@@ -33,10 +40,43 @@ const RegisterForm = () => {
         document.title = 'Code Match | Register'
     }, [])
 
+    const handleSubmit = async (e) => {
+        e.preventDefault
+
+        let languages = selectedLanguages.join('/')
+
+        const data = {
+            name,
+            surname,
+            email,
+            pwd,
+            languages,
+            description
+        }
+
+        try {
+            const response = await fetch('http://localhost:3000/register', {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            if (response.ok) {
+                console.log('bien')
+                setTimeout(function () {
+                    notify()
+                    window.open('/about', '_self')
+                }, 3000)    
+            }
+
+        } catch (error) {
+            console.error('Ha habido un error al registrarte.')
+        }
+    }
+
     return (
         <main className="register">
             <h1>Gracias por elegirnos!</h1>
-            <form action="" className="register-form">
+            <form action="" className="register-form" onSubmit={handleSubmit}>
                 <label htmlFor='name'>Nombre: </label>
                 <input
                     type='text'
@@ -120,10 +160,16 @@ const RegisterForm = () => {
                 />
 
                 <label htmlFor='photo'>Foto de perfil:</label>
-                <input type='file' className='photo' name='photo' id='photo'></input>
+                <input
+                    type='file'
+                    className='photo'
+                    name='photo'
+                    id='photo'
+                />
 
                 <input type='submit' value='Enviar' className='submit' id='submit'></input>
             </form>
+            <Toaster />
         </main>
     )
 }
