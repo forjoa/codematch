@@ -1,0 +1,33 @@
+:root {
+    --dark-grey: #363753;
+    --light-grey: #ededed;
+    --white: #FEFEFE;
+    --green: #5CD2C6;
+}
+
+section {
+    width: 550px;
+    height: 450px;
+    box-sizing: border-box;
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 300px -86px rgba(0, 0, 0, 0.75);
+}
+
+section h3 {
+    color: var(--dark-grey);
+    margin: 0;
+}
+
+section p {
+    text-align: center;
+}
+
+section .card-img {
+    aspect-ratio: 4 / 4;
+    width: 300px;
+}

@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@700&display=swap');
+
+:root {
+    --dark-grey: #363753;
+    --light-grey: #DFE3EE;
+    --white: #FEFEFE;
+    --green: #5CD2C6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    height: 86vh;
+    width: 100%;
+    font-family: SF Pro Text;
+    display: flex;
+    padding: 0 75px;
+}
+
+.img {
+    height: 100%;
+    width: 50%;
+}
+
+.img img {
+    height: 99%;
+    width: 100%;
+    object-fit: cover;
+    filter: saturate(0.8);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    padding: 200px 80px;
+    width: 50%;
+}
+
+.text h1 {
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 81px;
+    white-space: nowrap;
+    border-right: 5px solid;
+    width: 9.7ch;
+    animation: typing 1s steps(10), blink .5s infinite step-end alternate;
+    overflow: hidden;
+}
+
+.text h2 {
+    font-size: 36px;
+    font-weight: bolder;
+    color: var(--green);
+}
+
+.text h1,
+.text h2,
+.text h3,
+.text span {
+    margin: 0;
+}
+
+.text span {
+    font-weight: bold;
+}
+
+.text h1 span {
+    display: inline-block;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@media (max-width: 1200px) {
+    main {
+        flex-direction: column-reverse;
+        height: auto;
+        padding: 0 30px;
+        margin-top: 10px;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .text {
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .text span {
+        font-size: 15px;
+    }
+
+    .text h1 {
+        display: inline-block;
+        margin: 0 auto;
+        width: auto;
+        font-size: 50px;
+    }
+
+    .text h1 span {
+        font-size: 50px;
+    }
+
+    .text h2 {
+        font-size: 45px;
+    }
+}

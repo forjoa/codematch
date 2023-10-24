@@ -1,0 +1,105 @@
+:root {
+    --dark-grey: #363753;
+    --light-grey: #DFE3EE;
+    --white: #FEFEFE;
+    --green: #5CD2C6;
+}
+
+aside {
+    margin-top: 30px;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: SF Pro Text;
+    background-color: var(--green);
+    border-top-left-radius: 50% 40%;
+    border-top-right-radius: 50% 40%;
+    box-sizing: border-box;
+}
+
+aside .general {
+    height: calc(100% - 30%);
+    width: calc(100% - 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 15px;
+}
+
+aside .general .img {
+    height: calc(90% - 50px);
+}
+
+aside .general .img img {
+    height: 100%;
+    object-fit: contain;
+}
+
+aside .general .form {
+    padding: 0 30px;
+    width: 50%;
+}
+
+aside .general .form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+aside .general .form form input,
+aside .general .form form textarea {
+    border: none;
+    outline: none;
+    border-bottom: solid 1px var(--dark-grey);
+    padding-bottom: 10px;
+}
+
+aside .general .form form input[type=submit] {
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s;
+    background-color: var(--green);
+    color: var(--white);
+    font-family: SF Pro Text;
+    cursor: pointer;
+    padding: 0;
+}
+
+aside .general .form form input[type=submit]:hover {
+    filter: opacity(0.7);
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    font-family: SF Pro Text;
+    font-size: 15px;
+}
+
+@media (max-width: 900px) {
+    aside {
+        height: auto;
+        border-top-left-radius: 20% 20%;
+        border-top-right-radius: 20% 20%;
+    }
+
+    aside .general {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    aside .general .img {
+        width: 80%;
+    }
+
+    aside .general .form {
+        width: 100%;
+        padding-bottom: 30px;
+    }
+}

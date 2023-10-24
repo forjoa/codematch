@@ -1,0 +1,113 @@
+:root {
+    --dark-grey: #363753;
+    --medium-grey: #464764;
+    --light-grey: #DFE3EE;
+    --white: #FEFEFE;
+    --green: #5CD2C6;
+}
+
+.modal {
+    width: 1200px;
+    font-size: 12px;
+    background-color: white;
+    font-family: SF Pro Text;
+    padding: 30px;
+    border-radius: 15px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: 10px;
+    top: 10px;
+    font-size: 24px;
+    border: none;
+    background: #ffffff;
+}
+
+.popup-overlay {
+    background: rgba(0, 0, 0, .5);
+}
+
+.header {
+    margin: 0;
+}
+
+.content ul {
+    margin: 0;
+}
+
+.photo-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.photo-name img {
+    aspect-ratio: 1/1;
+    width: 280px;
+    border-radius: 50%;
+    border: 3px solid var(--green);
+    cursor: pointer;
+}
+
+.devinfo-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.contact-me-btn {
+    border: none;
+    padding: 15px 25px;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-family: SF Pro Text;
+    font-size: 16px;
+    background-color: var(--green);
+    color: var(--white);
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.contact-me-btn:hover {
+    filter: opacity(0.7);
+}
+
+.content ul {
+    list-style:square;
+}
+
+@media (max-width: 900px) {
+    .devinfo-content {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .photo-name {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .photo-name img {
+        width: 140px;
+    }
+
+    .modal {
+        width: 100%;
+    }
+
+    .contact-me-btn {
+        width: 100%;
+    }
+}

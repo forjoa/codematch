@@ -1,0 +1,38 @@
+:root {
+    --dark-grey: #363753;
+    --medium-grey: #464764;
+    --light-grey: #DFE3EE;
+    --white: #FEFEFE;
+    --green: #5CD2C6;
+    --yellow: #E5C540;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.progress-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 15px;
+    background: #5CD2C6;
+    transform-origin: 0%;
+    z-index: 999;
+    box-shadow: 0px 0px 49px 1px rgba(0, 0, 0, 0.75);
+}

@@ -1,0 +1,64 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Dependencias
+node_modules/
+
+# Archivos de construcción
+/dist/
+/build/
+/out/
+
+# Archivos de configuración específicos de tu entorno local
+.env.local
+.env.*.local
+
+# Otros archivos generados durante el desarrollo
+.cache/
+.log/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+*.bak
+*.swp
+*~
+
+# Archivos de respaldo
+*.bak
+*.swp
+*~
+
+# Archivos de pruebas
+/coverage/
+
+# Dependiendo de tu proyecto y preferencias, puedes agregar otros archivos o directorios aquí, como archivos generados por tu editor o archivos de configuración personalizados.
+

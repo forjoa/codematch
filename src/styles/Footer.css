@@ -1,0 +1,50 @@
+:root {
+    --dark-grey: #363753;
+    --light-grey: #DFE3EE;
+    --white: #FEFEFE;
+    --green: #5CD2C6;
+}
+
+footer {
+    font-family: SF Pro Text;
+    background-color: var(--green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    flex-direction: column;
+    bottom: 0;
+}
+
+footer ul {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 30px;
+}
+
+footer li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+footer li img {
+    aspect-ratio: 1 / 1;
+    width: 30px;
+}
+
+footer li a {
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 900px) {
+    footer ul {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,131 @@
+:root {
+    --dark-grey: #363753;
+    --medium-grey: #464764;
+    --light-grey: #DFE3EE;
+    --white: #FEFEFE;
+    --green: #5CD2C6;
+}
+
+.devs-container {
+    margin-bottom: 30px;
+}
+
+.card {
+    width: 450px;
+    height: 260px;
+    margin: 0 auto;
+    background-color: var(--dark-grey);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+
+.circle {
+    padding: 0 4px;
+}
+
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff605c;
+}
+
+.yellow {
+    background-color: #ffbd44;
+}
+
+.green {
+    background-color: var(--green);
+}
+
+.card_content {
+    color: var(--white);
+    width: 100%;
+    height: calc(100% - 70px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card_content p {
+    margin: 0;
+}
+
+.card_content span {
+    color: var(--light-grey);
+}
+
+.profile-photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-photo-container img {
+    aspect-ratio: 1 / 1;
+    width: 145px;
+    border-radius: 50%;
+    border: 3px solid var(--green);
+    background-color: var(--light-grey);
+}
+
+.info-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.p-lang {
+    color: var(--dark-grey) !important;
+    background-color: #ffbd44;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.info-btn {
+    color: var(--light-grey);
+    background-color: var(--medium-grey);
+    border-radius: 10px;
+    font-family: SF Pro Text;
+    padding: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+}
+
+
+
+@media (max-width: 900px) {
+    .card {
+        width: 370px;
+        height: auto;
+    }
+
+    .profile-photo-container img {
+        width: 120px;
+    }
+
+    .card_content {
+        flex-direction: column;
+    }
+
+    .info-container {
+        margin: 20px 0;
+        gap: 15px;
+    }
+}

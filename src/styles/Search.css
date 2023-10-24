@@ -1,0 +1,19 @@
+:root {
+    --dark-grey: #363753;
+    --light-grey: #DFE3EE;
+    --white: #FEFEFE;
+    --green: #5CD2C6;
+}
+
+.input-search {
+    margin: auto;
+    display: block;
+    width: 85%;
+    height: 30px;
+    font-family: SF Pro Text;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--dark-grey);
+    padding-left: 10px;
+}

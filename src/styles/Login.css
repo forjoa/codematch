@@ -1,0 +1,89 @@
+:root {
+    --dark-grey: #363753;
+    --medium-grey: #464764;
+    --light-grey: #DFE3EE;
+    --white: #FEFEFE;
+    --green: #5CD2C6;
+}
+
+.login-form {
+    height: auto;
+    width: 700px;
+    padding: 50px 20px;
+    background-color: var(--white);
+    border-radius: 15px;
+    font-family: SF Pro Text;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.login-form .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: 10px;
+    top: 10px;
+    font-size: 24px;
+    border: none;
+    background: var(--white);
+}
+
+.popup-overlay {
+    background: rgba(0, 0, 0, .5);
+}
+
+.login-form input[type="password"],
+.login-form input[type="email"] {
+    border: none;
+    border-bottom: 1px solid var(--dark-grey);
+    font-family: SF Pro Text;
+    padding: 0 0 7px 7px;
+    outline: none;
+    font-size: 14px;
+}
+
+.login-title h2{
+    margin-top: 0;
+}
+
+.login-icon {
+    aspect-ratio: 1/1;
+    width: 50px;
+}
+
+.submit-login {
+    border: none;
+    padding: 10px 0;
+    font-family: SF Pro Text;
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all .3s;
+}
+
+.submit-login:hover {
+    filter: opacity(0.7);
+}
+
+.register-box {
+    border-top: 1px solid var(--light-grey);
+    text-align: center;
+}
+
+.sign-in-btn {
+    color: var(--medium-grey);
+}
+
+@media (max-width: 900px) {
+    .popup-content {
+        width: 85%;
+    }
+    .login-form {
+        width: 100%;
+    }
+}
