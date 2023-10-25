@@ -7,6 +7,7 @@ import unlocked from '../../icons/unlocked.svg'
 import languages_frameworks from '../../constants/languages.js'
 
 const RegisterForm = () => {
+
     const notify = () => toast('Tarea añadida correctamente', {
         duration: 1000,
         position: 'top-center',
@@ -62,10 +63,6 @@ const RegisterForm = () => {
             })
             if (response.ok) {
                 console.log('bien')
-                setTimeout(function () {
-                    notify()
-                    window.open('/about', '_self')
-                }, 3000)    
             }
 
         } catch (error) {
@@ -76,7 +73,7 @@ const RegisterForm = () => {
     return (
         <main className="register">
             <h1>Gracias por elegirnos!</h1>
-            <form action="" className="register-form" onSubmit={handleSubmit}>
+            <form className="register-form" onSubmit={handleSubmit}>
                 <label htmlFor='name'>Nombre: </label>
                 <input
                     type='text'
