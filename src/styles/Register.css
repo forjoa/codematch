@@ -75,15 +75,36 @@ select option {
     height: 120px;
     outline: none;
     padding: 10px;
+    border-radius: 10px;
 }
 
-.photo {
-    border: none !important;
-    padding: 0px !important;
+.choose-photo {
+    margin: 0;
+}
+
+.label-photo img {
+    filter: opacity(0.7);
+}
+
+.label-photo {
+    border: 1px solid var(--dark-grey);
+    padding: 40px !important;
+    border-radius: 10px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    display: grid;
+    place-items: center;
     cursor: pointer;
+    transition: all .2s;
+}
+
+.label-photo:hover {
+    filter: opacity(0.5);
 }
 
 input[type='file'] {
+    display: none;
     font-family: SF Pro Text;
 }
 

@@ -3,16 +3,11 @@ import toast, { Toaster } from 'react-hot-toast'
 
 import locked from '../../icons/locked.svg'
 import unlocked from '../../icons/unlocked.svg'
+import uploadPhoto from '../../icons/uploadPhoto.svg'
 
 import languages_frameworks from '../../constants/languages.js'
 
 const RegisterForm = () => {
-
-    const notify = () => toast('Tarea añadida correctamente', {
-        duration: 1000,
-        position: 'top-center',
-        icon: '✅'
-    })
 
     // values from form
     const [name, setName] = useState('')
@@ -24,6 +19,7 @@ const RegisterForm = () => {
     const [selectedLanguages, setSelectedLanguages] = useState([])
     const [isUnlocked, setIsUnlocked] = useState(false)
 
+    // functions 
     const handleLanguageChange = (event) => {
         const selectedLanguage = event.target.value
 
@@ -62,7 +58,7 @@ const RegisterForm = () => {
                 body: JSON.stringify(data)
             })
             if (response.ok) {
-                console.log('bien')
+                window.open('/search', '_self')
             }
 
         } catch (error) {
@@ -70,10 +66,15 @@ const RegisterForm = () => {
         }
     }
 
+    const handleInputChange = (e) => {
+        document.querySelector('#photo-name-file').src = URL.createObjectURL(e.target.files[0])
+        document.querySelector('#label-photo').style.display = 'none'
+    }
+
     return (
         <main className="register">
             <h1>Gracias por elegirnos!</h1>
-            <form className="register-form" onSubmit={handleSubmit}>
+            <form className="register-form" method='POST' onSubmit={handleSubmit}>
                 <label htmlFor='name'>Nombre: </label>
                 <input
                     type='text'
@@ -156,12 +157,15 @@ const RegisterForm = () => {
                     onChange={(e) => { setDescription(e.target.value) }}
                 />
 
-                <label htmlFor='photo'>Foto de perfil:</label>
+                <p className='choose-photo'>Elegir foto:</p>
+                <label htmlFor='photo' className='label-photo' id='label-photo'>Foto de perfil <img src={uploadPhoto} alt='Camera Icon' /></label>
+                <img id='photo-name-file'/>
                 <input
                     type='file'
                     className='photo'
                     name='photo'
                     id='photo'
+                    onChange={(e) => handleInputChange(e)}
                 />
 
                 <input type='submit' value='Enviar' className='submit' id='submit'></input>
