@@ -1,0 +1,62 @@
+.welcome-container {
+    font-family: SF Pro Text;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.welcome {
+    padding: 30px;
+    box-shadow: 0px 0px 50px var(--light-grey);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 600px;
+}
+
+.welcome h2 {
+    color: var(--medium-grey);
+}
+
+.welcome h1, .welcome h2, .welcome img {
+    margin: 0;
+}
+
+.welcome img {
+    width: 100px;
+}
+
+.links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a:first-child {
+    background-color: var(--light-grey); /* Fondo gris para el primer enlace */
+    color: var(--dark-grey); /* Letras negras para el primer enlace */
+    text-decoration: none;
+    width: 45%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all .3s;
+}
+
+.links a:nth-child(2) {
+    text-decoration: none;
+    width: 45%;
+    text-align: center;
+    background-color: var(--green);
+    color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    transition: all .3s;
+}
+
+.links a:hover {
+    filter: opacity(.7);
+}
+

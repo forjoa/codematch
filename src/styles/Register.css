@@ -108,6 +108,15 @@ input[type='file'] {
     font-family: SF Pro Text;
 }
 
+#photo-name-file {
+    aspect-ratio: auto;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: auto;
+    border-radius: 50%;
+}
+
 .submit {
     background-color: var(--green);
     padding: 10px 0px !important;
