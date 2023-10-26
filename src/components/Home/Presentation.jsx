@@ -1,6 +1,7 @@
 import '../../styles/Presentation.css'
 
 import { motion } from 'framer-motion'
+
 import Spline from '@splinetool/react-spline'
 
 function Presentation() {
@@ -10,7 +11,10 @@ function Presentation() {
     return (
         <main>
             <div className="img">
-                <Spline async scene="https://prod.spline.design/mp0OPL9un8qFXsi4/scene.splinecode" />
+                <Spline 
+                    async 
+                    scene='https://prod.spline.design/mp0OPL9un8qFXsi4/scene.splinecode' 
+                />
             </div>
             <div className="text">
                 <span>SOMOS</span>
