@@ -16,6 +16,7 @@ const RegisterForm = () => {
     const [email, setEmail] = useState('')
     const [pwd, setPwd] = useState('')
     const [description, setDescription] = useState('')
+    const [selectedPhoto, setSelectedPhoto] = useState(null);
 
     const [selectedLanguages, setSelectedLanguages] = useState([])
     const [isUnlocked, setIsUnlocked] = useState(false)
@@ -43,20 +44,19 @@ const RegisterForm = () => {
 
         let languages = selectedLanguages.join('/')
 
-        const data = {
-            name,
-            surname,
-            email,
-            pwd,
-            languages,
-            description
-        }
+        const data = new FormData();
+        data.append('name', name);
+        data.append('surname', surname);
+        data.append('email', email);
+        data.append('pwd', pwd);
+        data.append('languages', languages);
+        data.append('description', description);
+        data.append('photo', selectedPhoto);
 
         try {
             const response = await fetch('http://localhost:3000/register', {
                 method: 'POST',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data)
+                body: data
             })
             if (response.ok) {
                 localStorage.setItem('name', name)
@@ -72,6 +72,8 @@ const RegisterForm = () => {
         document.querySelector('#photo-name-file').style.display = 'block'
         document.querySelector('#photo-name-file').src = URL.createObjectURL(e.target.files[0])
         document.querySelector('#label-photo').style.display = 'none'
+
+        setSelectedPhoto(e.target.files[0])
     }
 
     return (
