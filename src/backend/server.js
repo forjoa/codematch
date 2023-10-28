@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
 import db from "./database/database.js";
-import path from "path";
+import path, { dirname } from "path";
 import multer from "multer";
+import { fileURLToPath } from "url";
 
 const app = express();
 const port = 3000;
@@ -10,14 +11,20 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
+let uniqueNameFile = '';
+
 // multer config to upload files
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const storage = multer.diskStorage({
-  destination: path.join("../assets/", "uploads"),
+  destination: path.join(__dirname, "..", "assets", "uploads"),
   filename: (req, file, cb) => {
-    const uniqueNameFile = `${Date.now()}-${file.originalname}`;
+    uniqueNameFile = `${Date.now()}-${file.originalname}`;
     cb(null, uniqueNameFile);
   },
 });
+
 const upload = multer({ storage });
 
 // show developers
@@ -53,14 +60,13 @@ app.post("/doubts", (req, res) => {
 // insert new developers
 app.post("/register", upload.single("photo"), (req, res) => {
   const { name, surname, email, pwd, languages, description } = req.body;
-  const photoId = req.file.filename
 
   const query =
     "INSERT INTO developers (name, email, pwd, programming_lang, description, photo) values(?,?,?,?,?,?)";
 
   db.query(
     query,
-    [name + " " + surname, email, pwd, languages, description, photoId],
+    [name + " " + surname, email, pwd, languages, description, uniqueNameFile],
     (err, result) => {
       if (err) {
         console.error("error al registrar nuevo dev ", err);

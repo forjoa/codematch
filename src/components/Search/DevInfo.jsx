@@ -10,7 +10,7 @@ const DevInfo = ({ data, close }) => {
             </button>
             <div className="devinfo-content">
                 <div className="photo-name">
-                    <img src={data.photo} />
+                    <img src={`../src/assets/uploads/${data.photo}`}  />
                     <h2 className="header">{data.name}</h2>
                 </div>
                 <div className="content">

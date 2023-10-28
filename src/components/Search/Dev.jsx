@@ -3,6 +3,8 @@ import '../../styles/Dev.css'
 import Popup from 'reactjs-popup'
 import DevInfo from './DevInfo.jsx'
 
+import img from '../../assets/uploads/1698511436514-Captura de pantalla 2023-10-22 193856.png'
+
 const Dev = ({ data }) => {
 
     return (
@@ -20,7 +22,7 @@ const Dev = ({ data }) => {
                 </div>
                 <div className="card_content">
                     <div className="profile-photo-container">
-                        <img src={data.photo} />
+                        <img src={`../src/assets/uploads/${data.photo}`} />
                         <p>{data.name}</p>
                     </div>
                     <div className="info-container">
