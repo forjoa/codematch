@@ -78,6 +78,7 @@
 .profile-photo-container img {
     aspect-ratio: 1 / 1;
     width: 145px;
+    object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--green);
     background-color: var(--light-grey);
