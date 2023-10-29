@@ -54,10 +54,14 @@ const RegisterForm = () => {
         data.append('photo', selectedPhoto);
 
         try {
-            const response = await fetch('http://localhost:3000/register', {
+
+            await fetch('http://localhost:3000/register', {
                 method: 'POST',
                 body: data
             })
+                .then(res => res.json())
+                .then(data => console.log(data))
+
             if (response.ok) {
                 localStorage.setItem('name', name)
                 window.open('/welcome-dev', '_self')
