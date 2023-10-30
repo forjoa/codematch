@@ -74,9 +74,9 @@ app.post("/register", upload.single("photo"), (req, res) => {
         return;
       } else {
         console.log("dev correctamente guardado");
+        res.status(200).send("bien");
       }
 
-      res.json({ message: "nuevo dev insertado correctamente" });
     }
   );
 });

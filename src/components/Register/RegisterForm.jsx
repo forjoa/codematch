@@ -59,7 +59,7 @@ const RegisterForm = () => {
                 body: data
             })
 
-            if (response.ok) {
+            if (response.ok || response.statusText == "bien") {
                 localStorage.setItem('name', name)
                 window.location.href = 'http://localhost:5173/welcome-dev'
             }
@@ -82,7 +82,7 @@ const RegisterForm = () => {
             <main className="register">
                 <h1>Gracias por elegirnos!</h1>
                 <form className="register-form" method='POST' onSubmit={handleSubmit} encType="multipart/form-data">
-                    <label htmlFor='name'>Nombre: </label>
+                    <label htmlFor='name'>Nombre </label>
                     <input
                         type='text'
                         className='name'
@@ -93,7 +93,7 @@ const RegisterForm = () => {
                         onChange={(e) => { setName(e.target.value) }}
                     />
 
-                    <label htmlFor='surname'>Apellido:</label>
+                    <label htmlFor='surname'>Apellido</label>
                     <input
                         type='text'
                         className='surname'
@@ -104,7 +104,7 @@ const RegisterForm = () => {
                         onChange={(e) => { setSurname(e.target.value) }}
                     />
 
-                    <label htmlFor='email'>Correo:</label>
+                    <label htmlFor='email'>Correo</label>
                     <input
                         type='email'
                         className='email'
@@ -115,7 +115,7 @@ const RegisterForm = () => {
                         onChange={(e) => { setEmail(e.target.value) }}
                     />
 
-                    <label htmlFor="password">Contraseña:</label>
+                    <label htmlFor="password">Contraseña</label>
                     <div className="password-input">
                         <input
                             type={isUnlocked ? 'text' : 'password'}
@@ -132,7 +132,7 @@ const RegisterForm = () => {
                         />
                     </div>
 
-                    <label htmlFor="languages">Lenguajes y frameworks:</label>
+                    <label htmlFor="languages">Lenguajes y frameworks</label>
                     <select name="languages" className="languages" id="languages" onChange={handleLanguageChange}>
                         <option value="">Seleccione un lenguaje o framework</option>
                         {languages_frameworks.map((lang, index) => {
@@ -155,7 +155,7 @@ const RegisterForm = () => {
                         ))}
                     </div>
 
-                    <label htmlFor='description'>Descríbete:</label>
+                    <label htmlFor='description'>Descríbete</label>
                     <textarea
                         className='description'
                         name='description'
@@ -164,7 +164,7 @@ const RegisterForm = () => {
                         onChange={(e) => { setDescription(e.target.value) }}
                     />
 
-                    <p className='choose-photo'>Elegir foto:</p>
+                    <p className='choose-photo'>Elegir foto</p>
                     <label htmlFor='photo' className='label-photo' id='label-photo'>Foto de perfil <img src={uploadPhoto} alt='Camera Icon' /></label>
                     <img id='photo-name-file' alt='Profile photo' style={{ display: 'none' }} />
                     <input
