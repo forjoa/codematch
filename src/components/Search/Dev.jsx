@@ -3,8 +3,6 @@ import '../../styles/Dev.css'
 import Popup from 'reactjs-popup'
 import DevInfo from './DevInfo.jsx'
 
-import img from '../../assets/uploads/1698511436514-Captura de pantalla 2023-10-22 193856.png'
-
 const Dev = ({ data }) => {
 
     return (

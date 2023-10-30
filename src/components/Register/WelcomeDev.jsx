@@ -1,8 +1,8 @@
-import '../styles/WelcomeDev.css'
+import '../../styles/WelcomeDev.css'
 
 import { useEffect, useState } from "react"
 
-import logo from '../assets/photo-logo.png'
+import logo from '../../assets/photo-logo.png'
 import { Link } from 'react-router-dom'
 
 const WelcomeDev = () => {

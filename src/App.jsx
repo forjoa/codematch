@@ -1,7 +1,7 @@
 import Home from './components/Home.jsx'
 import Search from './components/Search.jsx'
 import Register from './components/Register.jsx'
-import WelcomeDev from './components/WelcomeDev.jsx'
+import WelcomeDev from './components/Register/WelcomeDev.jsx'
 
 import { BrowserRouter , Route , Routes } from 'react-router-dom'
 

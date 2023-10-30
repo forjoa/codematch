@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
-import Footer from '../Footer.jsx'
 
 import locked from '../../icons/locked.svg'
 import unlocked from '../../icons/unlocked.svg'
@@ -16,7 +15,7 @@ const RegisterForm = () => {
     const [email, setEmail] = useState('')
     const [pwd, setPwd] = useState('')
     const [description, setDescription] = useState('')
-    const [selectedPhoto, setSelectedPhoto] = useState(null);
+    const [photo, setPhoto] = useState(null);
 
     const [selectedLanguages, setSelectedLanguages] = useState([])
     const [isUnlocked, setIsUnlocked] = useState(false)
@@ -51,20 +50,18 @@ const RegisterForm = () => {
         data.append('pwd', pwd);
         data.append('languages', languages);
         data.append('description', description);
-        data.append('photo', selectedPhoto);
+        data.append('photo', photo);
 
         try {
 
-            await fetch('http://localhost:3000/register', {
+            const response = await fetch('http://localhost:3000/register', {
                 method: 'POST',
                 body: data
             })
-                .then(res => res.json())
-                .then(data => console.log(data))
 
             if (response.ok) {
                 localStorage.setItem('name', name)
-                window.open('/welcome-dev', '_self')
+                window.location.href = 'http://localhost:5173/welcome-dev'
             }
 
         } catch (error) {
@@ -77,14 +74,14 @@ const RegisterForm = () => {
         document.querySelector('#photo-name-file').src = URL.createObjectURL(e.target.files[0])
         document.querySelector('#label-photo').style.display = 'none'
 
-        setSelectedPhoto(e.target.files[0])
+        setPhoto(e.target.files[0])
     }
 
     return (
         <>
             <main className="register">
                 <h1>Gracias por elegirnos!</h1>
-                <form className="register-form" method='POST' onSubmit={handleSubmit}>
+                <form className="register-form" method='POST' onSubmit={handleSubmit} encType="multipart/form-data">
                     <label htmlFor='name'>Nombre: </label>
                     <input
                         type='text'
