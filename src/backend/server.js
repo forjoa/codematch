@@ -10,6 +10,11 @@ const port = process.env.port ?? 3000;
 
 app.use(cors());
 app.use(express.json());
+// Middleware de manejo de errores
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).send("Error interno del servidor");
+});
 
 let uniqueNameFile = '';
 
@@ -70,8 +75,7 @@ app.post("/register", upload.single("photo"), (req, res) => {
     (err, result) => {
       if (err) {
         console.error("error al registrar nuevo dev ", err);
-        res.status(500).send("error al registrar nuevo dev");
-        return;
+        next(err);
       } else {
         console.log("dev correctamente guardado");
         res.status(200).send("bien");
