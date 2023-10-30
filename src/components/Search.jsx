@@ -19,6 +19,7 @@ const Search = () => {
                 className='input-search'
                 type='text'
                 spellCheck='false'
+                placeholder='Nombre de usuario / Lenguaje '
             />
             <Developers />
             <Footer /> 
