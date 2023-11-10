@@ -39,7 +39,7 @@ const RegisterForm = () => {
     }, [])
 
     const handleSubmit = async (e) => {
-        e.preventDefault
+        e.preventDefault()
 
         let languages = selectedLanguages.join('/')
 
